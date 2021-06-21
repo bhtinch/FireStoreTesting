@@ -1,0 +1,6 @@
+framework module Pods_FirestoreTesting {
+  umbrella header "Pods-FirestoreTesting-umbrella.h"
+
+  export *
+  module * { export * }
+}
