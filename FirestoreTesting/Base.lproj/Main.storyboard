@@ -16,19 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qy6-Um-VhW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvI-Se-47Y">
+                                <rect key="frame" x="24" y="266" width="366" height="30"/>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7f-LC-FC3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-fG-kSa">
+                                <rect key="frame" x="24" y="208" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="document" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4o8-vk-MJf">
                                 <rect key="frame" x="24" y="92" width="366" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvI-Se-47Y">
-                                <rect key="frame" x="24" y="208" width="366" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2F-5g-8ld">
+                                <rect key="frame" x="24" y="320" width="366" height="30"/>
+                                <state key="normal" title="update"/>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7f-LC-FC3"/>
+                                    <action selector="updateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYa-9Z-0ez"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-fG-kSa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwJ-St-yMX">
+                                <rect key="frame" x="24" y="374" width="366" height="30"/>
+                                <state key="normal" title="merge"/>
+                                <connections>
+                                    <action selector="mergeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDf-Am-023"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-8K-GD6">
+                                <rect key="frame" x="24" y="452" width="366" height="30"/>
+                                <state key="normal" title="fetch"/>
+                                <connections>
+                                    <action selector="fetchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHN-KN-j4x"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qy6-Um-VhW">
                                 <rect key="frame" x="24" y="150" width="366" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -37,20 +63,33 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qy6-Um-VhW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="0zr-Cr-t8T"/>
+                            <constraint firstItem="f2F-5g-8ld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="3Fm-Cz-zHB"/>
+                            <constraint firstItem="f2F-5g-8ld" firstAttribute="top" secondItem="qvI-Se-47Y" secondAttribute="bottom" constant="24" id="3gB-dw-ZqK"/>
+                            <constraint firstItem="AwJ-St-yMX" firstAttribute="top" secondItem="f2F-5g-8ld" secondAttribute="bottom" constant="24" id="3qn-rR-XWv"/>
                             <constraint firstItem="qvI-Se-47Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="8QC-UA-aB3"/>
                             <constraint firstItem="wJ6-fG-kSa" firstAttribute="top" secondItem="Qy6-Um-VhW" secondAttribute="bottom" constant="24" id="ClK-oS-9cB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ge-8K-GD6" secondAttribute="trailing" constant="24" id="Fmt-yu-mnZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wJ6-fG-kSa" secondAttribute="trailing" constant="24" id="JbH-X7-FlG"/>
+                            <constraint firstItem="9ge-8K-GD6" firstAttribute="top" secondItem="AwJ-St-yMX" secondAttribute="bottom" constant="48" id="MCQ-1Q-v2R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qvI-Se-47Y" secondAttribute="trailing" constant="24" id="Q9g-YY-Byp"/>
                             <constraint firstItem="qvI-Se-47Y" firstAttribute="top" secondItem="wJ6-fG-kSa" secondAttribute="bottom" constant="24" id="R6p-tC-NLo"/>
+                            <constraint firstItem="Qy6-Um-VhW" firstAttribute="top" secondItem="4o8-vk-MJf" secondAttribute="bottom" constant="24" id="SpJ-Xj-NZL"/>
+                            <constraint firstItem="4o8-vk-MJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="TAs-6R-7Uu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4o8-vk-MJf" secondAttribute="trailing" constant="24" id="XyM-el-4AO"/>
+                            <constraint firstItem="9ge-8K-GD6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="eGP-jO-MNS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AwJ-St-yMX" secondAttribute="trailing" constant="24" id="igG-sZ-DQa"/>
                             <constraint firstItem="wJ6-fG-kSa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="jhD-eP-e9J"/>
                             <constraint firstItem="qvI-Se-47Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="jpo-TE-TWG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qy6-Um-VhW" secondAttribute="trailing" constant="24" id="mL5-yY-vzN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f2F-5g-8ld" secondAttribute="trailing" constant="24" id="nry-U3-oof"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qvI-Se-47Y" secondAttribute="trailing" constant="24" id="r8E-BY-utv"/>
+                            <constraint firstItem="4o8-vk-MJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="sP8-kW-1Jt"/>
                             <constraint firstItem="Qy6-Um-VhW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="yZ5-4N-kqP"/>
+                            <constraint firstItem="AwJ-St-yMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="zeL-2n-yKd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="documentTextField" destination="4o8-vk-MJf" id="GWe-p0-ITs"/>
                         <outlet property="keyTextField" destination="Qy6-Um-VhW" id="KBU-cm-kMt"/>
                         <outlet property="valueTextField" destination="wJ6-fG-kSa" id="ltN-Jz-xXo"/>
                     </connections>

@@ -11,7 +11,27 @@ import Firebase
 struct DatabaseManager {
     static let db = Firestore.firestore()
     
-    static func add(value: String, key: String) {
-        db.collection("myCollection").document("myDocument").setData([value : key])
+    static func create(document: String, key: String, value: String) {
+        db.collection("myCollection").document(document).setData([key : value])
+    }
+    
+    static func update(document: String, key: String, value: String) {
+        db.collection("myCollection").document(document).setData([key : value])
+    }
+    
+    static func addValueTo(document: String, key: String, value: String) {
+        db.collection("myCollection").document(document).setData([key : value], merge: true)
+    }
+    
+    static func fetch() {
+        db.collection("myCollection").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
     }
 }

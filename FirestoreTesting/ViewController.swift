@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var documentTextField: UITextField!
     @IBOutlet weak var keyTextField: UITextField!
     @IBOutlet weak var valueTextField: UITextField!
     
@@ -16,17 +17,53 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    @IBAction func createButtonTapped(_ sender: Any) {
+        let document = documentTextField.text!
         let key = keyTextField.text!
         let value = valueTextField.text!
-        
-        DatabaseManager.add(value: value, key: key)
-        
+
+        DatabaseManager.create(document: document, key: key, value: value)
+
+        documentTextField.text = nil
+        documentTextField.resignFirstResponder()
+        keyTextField.text = nil
+        keyTextField.resignFirstResponder()
+        valueTextField.text = nil
+        valueTextField.resignFirstResponder()
+    }
+
+    @IBAction func updateButtonTapped(_ sender: Any) {
+        let document = documentTextField.text!
+        let key = keyTextField.text!
+        let value = valueTextField.text!
+
+        DatabaseManager.update(document: document, key: key, value: value)
+
+        documentTextField.text = nil
+        documentTextField.resignFirstResponder()
+        keyTextField.text = nil
+        keyTextField.resignFirstResponder()
+        valueTextField.text = nil
+        valueTextField.resignFirstResponder()
+    }
+
+    @IBAction func mergeButtonTapped(_ sender: Any) {
+        let document = documentTextField.text!
+        let key = keyTextField.text!
+        let value = valueTextField.text!
+
+        DatabaseManager.addValueTo(document: document, key: key, value: value)
+
+        documentTextField.text = nil
+        documentTextField.resignFirstResponder()
         keyTextField.text = nil
         keyTextField.resignFirstResponder()
         valueTextField.text = nil
         valueTextField.resignFirstResponder()
     }
     
+    @IBAction func fetchButtonTapped(_ sender: Any) {
+        DatabaseManager.fetch()
+    }
 }
 
